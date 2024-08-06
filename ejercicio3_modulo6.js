@@ -40,3 +40,17 @@ const users = [
     },
   },
 ];
+
+let soundCounts = {};
+
+for (let user of users) {
+  for (let sound in user.favoritesSounds) {
+    if (soundCounts[sound]) {
+      soundCounts[sound]++;
+    } else {
+      soundCounts[sound] = 1;
+    }
+  }
+}
+
+console.log(soundCounts);
